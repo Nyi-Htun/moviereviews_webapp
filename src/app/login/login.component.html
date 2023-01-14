@@ -1,0 +1,32 @@
+<div class=" flex items-center justify-center
+        bg-gradient-to-br from-neutral-200 to-black-500 h-[650px] bg-auto">
+    <div 
+    class="w-[30%] h-[80%] 
+            bg-zinc-800 text-zinc-900/50 rounded-xl
+            shadow-2xl shadow-slate-100 mix-blend-overlay">
+
+        <h1 class="text-2xl text-white text-[30px] ml-[15%] mt-[20%]">Sign In</h1>
+    
+        <form [formGroup]="userData" (ngSubmit)="Submit(userData.value)" 
+            class="form-signin mt-[20px] ml-[15%] space-y-8 text-white">
+
+            <div class="border-1 rounded-[8px] w-[80%] overflow-hidden">
+            <input type="text" id="email" placeholder="Email or phone number"
+            class="form-control w-full h-[45px] bg-black" formControlName="username" required autofocus>
+            </div>
+            <div class="border-1 rounded-[8px] w-[80%] overflow-hidden">
+            <input type="password" id="password" placeholder="Password"
+            class="form-control w-full h-[45px] bg-black" formControlName="password" required>
+            </div>
+            <button type="submit" class="bg-cyan-900 text-white border-1 rounded-[8px] w-[80%] h-[45px]">Sign In</button>
+        </form>
+
+        <div class="text-[13px] text-neutral-200 ml-[15%] flex mt-[2%]">
+        <div class="mr-[2px]" *ngIf="check" (click)="check = !check"><fa-icon [icon]="faCheckSquare"></fa-icon></div>
+        <div class="mr-[2px]" *ngIf="!check" (click)="check = !check"><fa-icon [icon]="faSquare"></fa-icon></div>
+        <label for="tick">Remember me</label>
+        <a href="#" class="ml-[35%]">need help?</a>
+        </div>
+
+    </div>
+</div>

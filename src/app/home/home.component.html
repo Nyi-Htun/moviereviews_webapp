@@ -1,0 +1,62 @@
+<!--------------- Recommendation Movies Section -------------->
+<h1 class="font-mono font-thin text-3xl tracking-[5px] italic ml-8 my-4">Now Playing</h1>
+<div class="w-[98%] mx-auto rounded-xl flex flex-nowrap gap-4 overflow-x-scroll" >
+    <div *ngFor=" let movie of nowplayingmovies " (click)="gotoDetail(this.movie.id)">
+
+        <!-- <a [routerLink]="'/moviedetails'"> -->
+        <div class="min-w-[150px] h-[200px] rounded-xl overflow-hidden mb-2">
+            <img
+             [src]="prefixImg + this.movie.poster_path" [alt]="this.movie.original_title" 
+             class="w-full h-full">
+        </div>
+
+        <div class="flex justify-center">
+            <p>{{this.movie.original_title}}</p>
+        </div>
+        <!-- </a> -->
+        
+    </div>
+</div>
+<hr class="my-8 w-[80%] mx-auto">
+
+
+<!----------- Popular Movies Section --------------->
+<h1 class="font-mono font-thin text-3xl tracking-[5px] italic ml-8 my-4">Popular Movies</h1>
+<div class="w-[98%] mx-auto rounded-xl flex flex-nowrap gap-4 overflow-x-scroll" >
+    <div *ngFor=" let movie of popularmovies">
+
+        <div class="min-w-[150px] h-[200px] rounded-xl overflow-hidden mb-2">
+            <img
+             [src]="prefixImg + this.movie.poster_path" [alt]="this.movie.original_title" 
+             class="w-full h-full">
+        </div>
+
+        <div class="flex justify-center">
+            <p>{{this.movie.original_title}}</p>
+        </div>
+
+    </div>
+</div>
+<hr class="my-8 w-[80%] mx-auto">
+
+
+<!------------ Top Rated Movies Section ------------->
+<h1 class="mt-4 font-mono font-thin text-3xl tracking-[5px] italic ml-8 my-4">Top-Rated Movies</h1>
+
+<div class="w-[98%] mx-auto rounded-xl flex flex-nowrap gap-4 overflow-x-scroll" >
+    <div *ngFor=" let movie of topratedmovies">
+
+        <div class="min-w-[150px] h-[200px] rounded-xl overflow-hidden mb-2">
+            <img
+             [src]="prefixImg + this.movie.poster_path" [alt]="this.movie.original_title" 
+             class="w-full h-full mb-4">
+        </div>
+
+        <div class="flex justify-center">
+            <p>{{this.movie.original_title}}</p>
+        </div>
+
+    </div>
+</div>
+
+
